@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Editar Entrenador</title>
+    </h:head>
+    <h:body>
+        
+
+
+            <h:form>
+                <h1><h:outputText value="Create/Edit"/></h1>
+                <p:panelGrid columns="2">
+                    <p:outputLabel value="Id:" for="id" />
+                    <p:inputText id="id" value="#{controladorEntrenador.EntrenadordoActual().id}" title="Id" required="true" requiredMessage="The Id field is required."/>
+                    <p:outputLabel value="Nombre:" for="nombre" />
+                    <p:inputText id="nombre" value="#{controladorEntrenador.EntrenadordoActual().nombre}" title="Nombre" required="true" requiredMessage="The Nombre field is required."/>
+                    <p:outputLabel value="Apellidos:" for="apellidos" />
+                    <p:inputText id="apellidos" value="#{controladorEntrenador.EntrenadordoActual().apellidos}" title="Apellidos" required="true" requiredMessage="The Apellidos field is required."/>
+                    <p:outputLabel value="FechaReg:" for="fechaReg" />
+                    <p:inputText id="fechaReg" value="#{controladorEntrenador.EntrenadordoActual().fechaReg}" title="FechaReg" required="true" requiredMessage="The FechaReg field is required.">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </p:inputText>
+                    <p:outputLabel value="Nick:" for="nick" />
+                    <p:inputText id="nick" value="#{controladorEntrenador.EntrenadordoActual().nick}" title="Nick" required="true" requiredMessage="The Nick field is required."/>
+                </p:panelGrid>
+                <h:commandLink action="#{controladorEntrenador.editar()}" value="editar" />
+            </h:form>
+        
+
+    </h:body>
+</html>
+

@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>listado entrenadores</title>
+
+    </h:head>
+    <h:body>
+        
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="List"/></h1>
+                <h:commandLink action="#{controladorPokemon.prepararCrear()}" value="Crear" />
+                <p:dataTable value="#{controladorPokemon.datosPokemon}" 
+                             var="item" 
+                             >
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Id"/>
+                        </f:facet>
+                        <h:outputText value="#{item.id}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Imge"/>
+                        </f:facet>
+                        <p:graphicImage value="/faces/img/#{item.imge}" />
+                        
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Nombre"/>
+                        </f:facet>
+                        <h:outputText value="#{item.nombre}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Region"/>
+                        </f:facet>
+                        <h:outputText value="#{item.region}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Tipo"/>
+                        </f:facet>
+                        <h:outputText value="#{item.tipo}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Capturado"/>
+                        </f:facet>
+                        <h:outputText value="#{item.capturado}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Nivel"/>
+                        </f:facet>
+                        <h:outputText value="#{item.nivel}"/>
+                    </p:column>
+                     <p:column>
+                       <h:commandLink action="#{controladorPokemon.prepararEditar(item.id)}" value="Editar" />
+                <h:commandLink action="#{controladorPokemon.borrando(item.id)}" value="Borrar" />
+                    </p:column>
+                </p:dataTable>
+                
+            </h:form>
+        </f:view>
+
+
+ 
+    </h:body>
+</html>
+

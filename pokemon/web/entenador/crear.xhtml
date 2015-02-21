@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Crear Entrenador</title>
+    </h:head>
+    <h:body>
+        <f:view>
+
+            <h:form>
+                <h1><h:outputText value="Create/Edit"/></h1>
+                <p:growl sticky="true" />
+                <p:panelGrid columns="2">
+                    <p:outputLabel value="Nombre:" for="nombre" />
+                    <p:inputText id="nombre" value="#{controladorEntrenador.EntrenadordoActual().nombre}" title="Nombre" required="true" requiredMessage="The Nombre field is required."/>
+                    <p:outputLabel value="Apellidos:" for="apellidos" />
+                    <p:inputText id="apellidos" value="#{controladorEntrenador.EntrenadordoActual().apellidos}" title="Apellidos" required="true" requiredMessage="The Apellidos field is required."/>
+                    <p:outputLabel value="FechaReg:" for="fechaReg" />
+                    <p:calendar id="fechaReg" value="#{controladorEntrenador.EntrenadordoActual().fechaReg}" mode="popup" showOn="button"/>
+                    <p:outputLabel value="Nick:" for="nick" />
+                    <p:inputText id="nick" value="#{controladorEntrenador.EntrenadordoActual().nick}" title="Nick" required="true" requiredMessage="The Nick field is required."/>
+                </p:panelGrid>
+                <h:commandLink value="Guadar" action="#{controladorEntrenador.crear()}"/>
+                <h:commandLink value="Lista de entrenaodres" action="#{controladorEntrenador.prepararListado()}" immediate="true"/>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+

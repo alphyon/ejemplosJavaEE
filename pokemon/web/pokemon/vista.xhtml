@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+       <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="Create/Edit"/></h1>
+                <p:panelGrid columns="2">
+                     <f:facet name="header">
+                    <p:graphicImage value="/faces/img/#{controladorPokemon.PokemondoActual().imge}" />
+                    </f:facet>
+                    <p:outputLabel value="Id:" for="id" />
+                    <p:outputLabel id="id" value="#{controladorPokemon.PokemondoActual().id}"  />
+                    <p:outputLabel value="Imge:" for="imge" />
+                    <p:outputLabel id="imge" value="#{controladorPokemon.PokemondoActual().imge}"  />
+                    <p:outputLabel value="Nombre:" for="nombre" />
+                    <p:outputLabel id="nombre" value="#{controladorPokemon.PokemondoActual().nombre}" />
+                    <p:outputLabel value="Region:" for="region" />
+                    <p:outputLabel id="region" value="#{controladorPokemon.PokemondoActual().region}"  />
+                    <p:outputLabel value="Tipo:" for="tipo" />
+                    <p:outputLabel id="tipo" value="#{controladorPokemon.PokemondoActual().tipo}"/>
+                    <p:outputLabel value="Capturado:" for="capturado" />
+                    <p:outputLabel id="capturado" value="#{controladorPokemon.PokemondoActual().capturado}" />
+                       
+                    <p:outputLabel value="Nivel:" for="nivel" />
+                    <p:outputLabel id="nivel" value="#{controladorPokemon.PokemondoActual().nivel}" />
+                </p:panelGrid>
+                <h:commandLink action="#{controladorPokemon.prepararListado()}" value="Listado Pokemon" />
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+

@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Editar Entrenador</title>
+    </h:head>
+    <h:body>
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="Create/Edit"/></h1>
+                
+                <p:panelGrid columns="2">
+                    <f:facet name="header">
+                    <p:graphicImage value="/faces/img/#{controladorPokemon.PokemondoActual().imge}" />
+                    </f:facet>
+                    <p:outputLabel value="Id:" for="id" />
+                    <p:inputText id="id" value="#{controladorPokemon.PokemondoActual().id}" title="Id" required="true" requiredMessage="The Id field is required."/>
+                    <p:outputLabel value="Imge:" for="imge" />
+                    <p:inputText id="imge" value="#{controladorPokemon.PokemondoActual().imge}" title="Imge" />
+                    <p:outputLabel value="Nombre:" for="nombre" />
+                    <p:inputText id="nombre" value="#{controladorPokemon.PokemondoActual().nombre}" title="Nombre" required="true" requiredMessage="The Nombre field is required."/>
+                    <p:outputLabel value="Region:" for="region" />
+                    <p:inputText id="region" value="#{controladorPokemon.PokemondoActual().region}" title="Region" />
+                    <p:outputLabel value="Tipo:" for="tipo" />
+                    <p:inputText id="tipo" value="#{controladorPokemon.PokemondoActual().tipo}" title="Tipo" required="true" requiredMessage="The Tipo field is required."/>
+                    <p:outputLabel value="Capturado:" for="capturado" />
+                    <p:inputText id="capturado" value="#{controladorPokemon.PokemondoActual().capturado}" title="Capturado" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </p:inputText>
+                    <p:outputLabel value="Nivel:" for="nivel" />
+                    <p:inputText id="nivel" value="#{controladorPokemon.PokemondoActual().nivel}" title="Nivel" />
+                </p:panelGrid>
+                <h:commandLink action="#{controladorPokemon.editar()}" value="editar" />
+            </h:form>
+        </f:view>
+
+
+
+           
+        
+
+    </h:body>
+</html>
+

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Guardar Datos Personales</title>
+    </h:head>
+    <h:body>
+        <h:form id="formulario">
+            <p:growl id="msgs" showDetail="true" />
+            <p:panel header="Guardar Datos Personales" 
+                     style="margin-bottom: 10px"
+                     id="panel" >
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputText value="Nombres:" />
+                    <p:inputText value="#{beanPersonales.nombre}" />
+                    <h:outputText value="Apellidos:" />
+                    <p:inputText value="#{beanPersonales.apellido}" />
+                    <h:outputText value="Fecha Nacimiento:" />
+                    <p:inputText value="#{beanPersonales.fnacimiento}" />
+                    <h:outputText value="Estado:" />
+                    <p:inputText value="#{beanPersonales.estado}" />
+                </h:panelGrid>
+                <p:separator/>
+                <p:commandButton value="Guardar" 
+                                 update="msgs"
+                                 actionListener="#{beanPersonales.guardarPersonales()}" />
+                <p:commandButton value="Limpiar"
+                                 update="msgs"
+                                 actionListener="#{beanPersonales.limpiarDatos()}" />
+
+            </p:panel>
+        </h:form>
+    </h:body>
+</html>
+
